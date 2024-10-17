@@ -66,7 +66,7 @@ const Home = () => {
           {sort.length > 0 && sort.map((i, index) => <span key={index} className='sort-tag'>{i} <span className='sort-tag-cross' onClick={handleRemoveSort}>x</span></span>)}
         </div>
 
-        <ul className='row d-flex align-items-stretch '>
+        <ul className='row d-flex align-items-stretch mb-5 '>
           {products.map((product) => (
             <li key={product.id} className="product col-lg-4">
               <img src={product.image} alt={product.title} />

@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
           <div className="navbar-left">
-            <Link to="/">GuiShop</Link>
+            <Link to="/"><span class="G">G</span><span class="u">u</span><span class="i">i</span><span class="g">g</span><span class="l">l</span><span class="e">e</span>Shop</Link>
             <Link to="/Add-product">Add Article</Link>
           </div>
 
