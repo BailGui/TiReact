@@ -63,9 +63,10 @@ const Home = () => {
           <button type="button" onClick={handleSortButton}>Sort</button>
           {sort.length > 0 && sort.map((i, index) => <span key={index} className='sort-tag'>{i} <span className='sort-tag-cross' onClick={handleRemoveSort}>x</span></span>)}
         </div>
-        <ul>
+
+        <ul className='row d-flex align-items-stretch '>
           {products.map((product) => (
-            <li key={product.id} className="product col-lg-6">
+            <li key={product.id} className="product col-lg-4">
               <img src={product.image} alt={product.title} />
               <div className="product-info">
                 {/* title */}
