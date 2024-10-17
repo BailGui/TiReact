@@ -57,10 +57,12 @@ const Home = () => {
   };
 
   return (
+
     <section className='container'>
       <div className="product-list row align-content">
+        <img className="d-block w-100 mb-4 p-5" src="img/Deals-of-the-week-orange-2024.webp" alt="First slide" />
         <div className='product-sort justify-content-center'>
-          <button type="button" onClick={handleSortButton}>Sort</button>
+          <button type="button" className='mb-5' onClick={handleSortButton}>Sort</button>
           {sort.length > 0 && sort.map((i, index) => <span key={index} className='sort-tag'>{i} <span className='sort-tag-cross' onClick={handleRemoveSort}>x</span></span>)}
         </div>
 
@@ -84,7 +86,7 @@ const Home = () => {
                   />
                 ) : (
                   <Link to={`/product/${product.id}`}>
-                    <h3>{product.title}</h3>
+                    <h3 className='text-uppercase text-small'>{product.title}</h3>
                   </Link>
                 )}
 
@@ -134,7 +136,7 @@ const Home = () => {
                     }}
                   />
                 ) : (
-                  <p className="price">Rs{product.price}</p>
+                  <p className="price">${product.price}</p>
                 )}
 
                 {/* rating */}
@@ -159,7 +161,7 @@ const Home = () => {
 
                 {editingProduct === product ? (<>
                   <button onClick={() => handleCancleProduct()}>
-                    cancle
+                    cancel
                   </button>
 
                   <button onClick={(e) => handleUpdateProduct(product.id)}>

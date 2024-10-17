@@ -16,12 +16,13 @@ function Layout() {
     <>    <div style={{ position: "fixed", width: "100%", top: 0 }}>
       <Navbar></Navbar>
     </div>
+
       {flashMessage && <FlashMessage message={flashMessage} onClose={handleFlashClose} />}
       <div style={{ marginTop: "100px" }}>
         <Outlet></Outlet>
       </div>
       <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; BailGui 2024</p></div>
       </footer>
     </>
   );

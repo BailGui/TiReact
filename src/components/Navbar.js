@@ -13,21 +13,19 @@ const Navbar = () => {
   }, [])
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#!">GuiShop</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container space-between px-4 px-lg-5">
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
           <div className="navbar-left">
-            <Link to="/">Candy Shop</Link>
-            <Link to="/Add-product">Add Sugar</Link>
+            <Link to="/">GuiShop</Link>
+            <Link to="/Add-product">Add Article</Link>
           </div>
 
-          <form class="d-flex">
-
+          <form className="d-flex">
             <Link to="/cart">
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping"></i>
             </Link>
             <span className="cart-value">{`(${cart})`}</span>
           </form>
