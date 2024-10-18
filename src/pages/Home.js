@@ -76,7 +76,7 @@ const Home = () => {
             className="col-lg-6 order-1 order-lg-2 hero-img"
             data-aos="fade-left"
           >
-            <img src="img/Group-of-friends playing-video-games.png" className="img-fluid mb-5" alt="" />
+            <img src="img/Guy-playing-with-a-gamepad.png" className="img-fluid mb-5" alt="" />
           </div>
         </div>
       </div>

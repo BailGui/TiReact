@@ -23,7 +23,7 @@ function Layout() {
       </div>
 
       <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; <span class="G">G</span><span class="u">u</span><span class="i">i</span><span class="g">g</span><span class="l">l</span><span class="e">e</span> 2024</p></div>
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; <a href="https://2023.webdev-cf2m.be/Guillaume/"><span class="G">G</span><span class="u">u</span><span class="i">i</span><span class="g">g</span><span class="l">l</span><span class="e">e</span></a> 2024</p></div>
       </footer>
     </>
   );
