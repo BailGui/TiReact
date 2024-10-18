@@ -16,30 +16,34 @@ const Cart = () => {
   };
 
   return (
-    <div className="product-list">
-      <ul>
-        {cartProducts && cartProducts.map((product) => (
-          <li key={product.id} className="product">
-            <img src={product.image} alt={product.title} />
-            <div className="product-info">
-              {/* title */}
-              <Link to={`/product/${product.id}`}>
-                <h3>{product.title}</h3>
-              </Link>
+    <div className="container">
+      <div className="row">
+        <h1 className="text-center m-5"><span class="G">G</span><span class="u">u</span><span class="i">i</span><span class="g">g</span><span class="l">l</span><span class="e">e</span>Cart</h1>
+        <div className="product-list container">
 
-              {/* category */}
-              <p className="price">{product.category}</p>
+          <ul>
+            {cartProducts && cartProducts.map((product) => (
+              <li key={product.id} className="product">
+                <img src={product.image} alt={product.title} />
+                <div className="product-info">
+                  {/* title */}
+                  <Link to={`/product/${product.id}`}>
+                    <h3>{product.title}</h3>
+                  </Link>
 
-              {/* description */}
-              <p>{product.description}</p>
+                  {/* category */}
+                  <p className="price">{product.category}</p>
 
-              {/* price */}
-              <p className="price">Rs{product.price}</p>
+                  {/* description */}
+                  <p>{product.description}</p>
 
-              {/* rating */}
-              <p className="price">rating: {product.rating.rate}</p>
+                  {/* price */}
+                  <p className="price">Rs{product.price}</p>
 
-              {/* <div style={{display: "flex"}}>
+                  {/* rating */}
+                  <p className="price">rating: {product.rating.rate}</p>
+
+                  {/* <div style={{display: "flex"}}>
                 <button onClick={() => handleIncreaseQuantity(product)} style={{border: "none"}}>
                     <i class="fa-regular fa-square-plus"></i>
                 </button>
@@ -49,14 +53,17 @@ const Cart = () => {
                 </button>
             </div> */}
 
-              <button onClick={() => handleDeleteCartProduct(product.id)}>
-                <i class="fa-regular fa-trash-can"></i>
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+                  <button onClick={() => handleDeleteCartProduct(product.id)}>
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
+
   )
 }
 

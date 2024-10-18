@@ -37,17 +37,21 @@ const ProductDetailPage = () => {
     //   </div>
     //   <ProductReviews reviews={reviews} />
     // </div>
-    <div className="product-detail-container">
-      <div className="product-image-container">
-        <img src={image} alt="Product" />
-      </div>
-      <div className="product-info-container">
-        <h1>{title}</h1>
-        <p className="product-description"> {description} </p>
-        <div className="product-price">
-          ${price}
+    <div className='container'>
+      <div className='row'>
+        <div className="product-detail-container">
+          <div className="product-image-container">
+            <img src={image} alt="Product" />
+          </div>
+          <div className="product-info-container">
+            <h1>{title}</h1>
+            <p className="product-description"> {description} </p>
+            <div className="product-price">
+              ${price}
+            </div>
+            <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>Add to Cart</button>
+          </div>
         </div>
-        <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>Add to Cart</button>
       </div>
     </div>
   );

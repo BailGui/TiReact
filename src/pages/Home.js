@@ -70,7 +70,7 @@ const Home = () => {
             <h1 className='text-center'>
               <span className="G">G</span><span class="u">u</span><span className="i">i</span><span className="g">g</span><span className="l">l</span><span className="e">e</span>Shop<br />
             </h1>
-            <h4 className='text-center'>Bienvenue sur notre site!</h4>
+            <h4 className='text-center'>Welcome to your gaming paradise!</h4>
           </div>
           <div
             className="col-lg-6 order-1 order-lg-2 hero-img"
@@ -84,13 +84,13 @@ const Home = () => {
 
 
       <div className='product-sort justify-content-center'>
-        <button type="button" className='mb-5' onClick={handleSortButton}>Sort</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block m-5" onClick={handleSortButton}>Sort</button>
         {sort.length > 0 && sort.map((i, index) => <span key={index} className='sort-tag'>{i} <span className='sort-tag-cross' onClick={handleRemoveSort}>x</span></span>)}
       </div>
 
       <ul className='row d-flex align-items-stretch mb-5 '>
         {products.map((product) => (
-          <li key={product.id} className="product col-lg-4">
+          <li key={product.id} className="product col-lg-4 box featured p-1">
             <img src={product.image} alt={product.title} />
             <div className="product-info">
               {/* title */}
@@ -108,7 +108,7 @@ const Home = () => {
                 />
               ) : (
                 <Link to={`/product/${product.id}`}>
-                  <h3 className='text-uppercase text-small'>{product.title}</h3>
+                  <h6 className='text-uppercase text-center  p-2'>{product.title}</h6>
                 </Link>
               )}
 
@@ -192,14 +192,14 @@ const Home = () => {
               </>
               ) : (
                 <>
-                  <button onClick={() => handleAddToCart(product)}>
+                  <button type="button" class="btn btn-outline-success" onClick={() => handleAddToCart(product)}>
                     Add To Cart
                   </button>
-                  <button onClick={() => handleEditProduct(product)}>
+                  <button type="button" class="btn btn-outline-success" onClick={() => handleEditProduct(product)}>
                     <i class="fa-regular fa-pen-to-square"></i>
                   </button>
 
-                  <button onClick={() => handleDeleteProduct(product.id)}>
+                  <button type="button" class="btn btn-outline-success" onClick={() => handleDeleteProduct(product.id)}>
                     <i class="fa-regular fa-trash-can"></i>
                   </button>
                 </>

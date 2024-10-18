@@ -21,6 +21,7 @@ function Layout() {
       <div style={{ marginTop: "50px" }}>
         <Outlet></Outlet>
       </div>
+
       <footer class="py-5 bg-dark">
         <div class="container"><p class="m-0 text-center text-white">Copyright &copy; <span class="G">G</span><span class="u">u</span><span class="i">i</span><span class="g">g</span><span class="l">l</span><span class="e">e</span> 2024</p></div>
       </footer>

@@ -74,54 +74,61 @@ const AddProduct = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='form-container'>
-      <label className="form-label">
-        title:
-      </label>
-      <input type="text" name="title" value={productData.title} onChange={handleChange} className="form-input" />
-      {errors.title && <p className="form-error">{errors.title}</p>}
+    <div className='container'>
+      <div className='row justify-content-center'>
+        <div className='col'>
+          <h1 className="text-center m-5"><span class="G">G</span><span class="u">u</span><span class="i">i</span><span class="g">g</span><span class="l">l</span><span class="e">e</span>Add</h1>
+          <form onSubmit={handleSubmit} className='form-container mb-5 '>
+            <label className="form-label">
+              title:
+            </label>
+            <input type="text" name="title" value={productData.title} onChange={handleChange} className="form-input" />
+            {errors.title && <p className="form-error">{errors.title}</p>}
 
-      <label className="form-label">
-        Category:
-      </label>
-      <input type="text" name="category" value={productData.category} onChange={handleChange} className="form-input" />
-      {errors.category && <p className="form-error">{errors.category}</p>}
+            <label className="form-label">
+              Category:
+            </label>
+            <input type="text" name="category" value={productData.category} onChange={handleChange} className="form-input" />
+            {errors.category && <p className="form-error">{errors.category}</p>}
 
-      <label className="form-label">
-        Description:
-      </label>
-      <textarea name="description" value={productData.description} onChange={handleChange} className="form-input"></textarea>
-      {errors.description && <p className="form-error">{errors.description}</p>}
+            <label className="form-label">
+              Description:
+            </label>
+            <textarea name="description" value={productData.description} onChange={handleChange} className="form-input"></textarea>
+            {errors.description && <p className="form-error">{errors.description}</p>}
 
-      <label className="form-label">
-        Image:
-      </label>
-      <input type="text" name="image" value={productData.image} onChange={handleChange} className="form-input" />
-      {errors.image && <p className="form-error">{errors.image}</p>}
+            <label className="form-label">
+              Image:
+            </label>
+            <input type="text" name="image" value={productData.image} onChange={handleChange} className="form-input" />
+            {errors.image && <p className="form-error">{errors.image}</p>}
 
-      <label className="form-label">
-        Price:
-      </label>
-      <input type="number" name="price" value={productData.price} onChange={handleChange} className="form-input" />
-      {errors.price && <p className="form-error">{errors.price}</p>}
-      {/* <label>
+            <label className="form-label">
+              Price:
+            </label>
+            <input type="number" name="price" value={productData.price} onChange={handleChange} className="form-input" />
+            {errors.price && <p className="form-error">{errors.price}</p>}
+            {/* <label>
         Quantity:
         <input type="n" name="quantity" value={productData.quantity} onChange={handleChange} />
       </label> */}
-      <label className="form-label">
-        Count:
-      </label>
-      <input type="number" name="count" value={productData.count} onChange={handleChange} className="form-input" />
-      {errors.count && <p className="form-error">{errors.count}</p>}
+            <label className="form-label">
+              Count:
+            </label>
+            <input type="number" name="count" value={productData.count} onChange={handleChange} className="form-input" />
+            {errors.count && <p className="form-error">{errors.count}</p>}
 
-      <label className="form-label">
-        Rate:
-      </label>
-      <input type="number" name="rate" value={productData.rate} onChange={handleChange} className="form-input" />
-      {errors.rate && <p className="form-error">{errors.rate}</p>}
+            <label className="form-label">
+              Rate:
+            </label>
+            <input type="number" name="rate" value={productData.rate} onChange={handleChange} className="form-input" />
+            {errors.rate && <p className="form-error">{errors.rate}</p>}
 
-      <button type="submit" className="form-button">Submit</button>
-    </form>
+            <button type="submit" className="form-button">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
 
