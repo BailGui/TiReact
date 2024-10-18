@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, deleteProduct, updateProduct, actions } from '../store';
+import { actions } from '../store';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
@@ -8,7 +8,7 @@ const Cart = () => {
   const cartProducts = useSelector((state) => state.cart);
 
   useEffect(() => {
-        dispatch(actions.getCartProducts());
+    dispatch(actions.getCartProducts());
   }, []);
 
   const handleDeleteCartProduct = (id) => {
@@ -22,24 +22,24 @@ const Cart = () => {
           <li key={product.id} className="product">
             <img src={product.image} alt={product.title} />
             <div className="product-info">
-            {/* title */}
+              {/* title */}
               <Link to={`/product/${product.id}`}>
                 <h3>{product.title}</h3>
               </Link>
 
-            {/* category */}
-            <p className="price">{product.category}</p>
+              {/* category */}
+              <p className="price">{product.category}</p>
 
-            {/* description */}
-            <p>{product.description}</p>
+              {/* description */}
+              <p>{product.description}</p>
 
-            {/* price */}
-            <p className="price">Rs{product.price}</p>
+              {/* price */}
+              <p className="price">Rs{product.price}</p>
 
-            {/* rating */}
-            <p className="price">rating: {product.rating.rate}</p>
-            
-            {/* <div style={{display: "flex"}}>
+              {/* rating */}
+              <p className="price">rating: {product.rating.rate}</p>
+
+              {/* <div style={{display: "flex"}}>
                 <button onClick={() => handleIncreaseQuantity(product)} style={{border: "none"}}>
                     <i class="fa-regular fa-square-plus"></i>
                 </button>
@@ -49,13 +49,13 @@ const Cart = () => {
                 </button>
             </div> */}
 
-            <button onClick={() => handleDeleteCartProduct(product.id)}>
-            <i class="fa-regular fa-trash-can"></i>
-            </button>
+              <button onClick={() => handleDeleteCartProduct(product.id)}>
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
             </div>
-        </li>
+          </li>
         ))}
-        </ul>
+      </ul>
     </div>
   )
 }

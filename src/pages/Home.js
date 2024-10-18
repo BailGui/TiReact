@@ -58,135 +58,156 @@ const Home = () => {
 
   return (
 
-    <section className='container'>
-      <div className="product-list row align-content">
-        <img className="d-block w-100 mb-4 p-5" src="img/Deals-of-the-week-orange-2024.webp" alt="First slide" />
-        <div className='product-sort justify-content-center'>
-          <button type="button" className='mb-5' onClick={handleSortButton}>Sort</button>
-          {sort.length > 0 && sort.map((i, index) => <span key={index} className='sort-tag'>{i} <span className='sort-tag-cross' onClick={handleRemoveSort}>x</span></span>)}
+    <section className='container mt-5'>
+
+
+      <div className="hero container ">
+        <div className="row d-flex align-items-center mt-5 pt-5">
+          <div
+            className="col-lg-6 py-5 py-lg-0 order-2 order-lg-1"
+            data-aos="fade-right"
+          >
+            <h1 className='text-center'>
+              <span className="G">G</span><span class="u">u</span><span className="i">i</span><span className="g">g</span><span className="l">l</span><span className="e">e</span>Shop<br />
+            </h1>
+            <h4 className='text-center'>Bienvenue sur notre site!</h4>
+          </div>
+          <div
+            className="col-lg-6 order-1 order-lg-2 hero-img"
+            data-aos="fade-left"
+          >
+            <img src="img/Group-of-friends playing-video-games.png" className="img-fluid mb-5" alt="" />
+          </div>
         </div>
+      </div>
 
-        <ul className='row d-flex align-items-stretch mb-5 '>
-          {products.map((product) => (
-            <li key={product.id} className="product col-lg-4">
-              <img src={product.image} alt={product.title} />
-              <div className="product-info">
-                {/* title */}
-                {editingProduct === product ? (
-                  <input
-                    type="text"
-                    className="form-input"
-                    value={editProductValue.title}
-                    onChange={(e) => {
-                      const newProduct = { ...editProductValue };
-                      newProduct.title = e.target.value;
-                      //handleUpdateProduct(product.id, newProduct);
-                      setEditProductValue(newProduct);
-                    }}
-                  />
-                ) : (
-                  <Link to={`/product/${product.id}`}>
-                    <h3 className='text-uppercase text-small'>{product.title}</h3>
-                  </Link>
-                )}
 
-                {/* category */}
-                {editingProduct === product ? (
-                  <input
-                    type="text"
-                    className="form-input"
-                    value={editProductValue.category}
-                    onChange={(e) => {
-                      const newProduct = { ...editProductValue };
-                      newProduct.category = e.target.value;
-                      //handleUpdateProduct(product.id, newProduct);
-                      setEditProductValue(newProduct);
-                    }}
-                  />
-                ) : (
-                  <p className="price">{product.category}</p>
-                )}
 
-                {/* description */}
-                {editingProduct === product ? (
-                  <textarea
-                    className="form-input"
-                    value={editProductValue.description}
-                    onChange={(e) => {
-                      const newProduct = { ...editProductValue };
-                      newProduct.description = e.target.value;
-                      //handleUpdateProduct(product.id, newProduct);
-                      setEditProductValue(newProduct);
-                    }}
-                  ></textarea>
-                ) : (
-                  <p>{product.description}</p>
-                )}
+      <div className='product-sort justify-content-center'>
+        <button type="button" className='mb-5' onClick={handleSortButton}>Sort</button>
+        {sort.length > 0 && sort.map((i, index) => <span key={index} className='sort-tag'>{i} <span className='sort-tag-cross' onClick={handleRemoveSort}>x</span></span>)}
+      </div>
 
-                {/* price */}
-                {editingProduct === product ? (
-                  <input
-                    type="text"
-                    value={editProductValue.price}
-                    onChange={(e) => {
-                      const newProduct = { ...editProductValue };
-                      newProduct.price = e.target.value;
-                      //handleUpdateProduct(product.id, newProduct);
-                      setEditProductValue(newProduct);
-                    }}
-                  />
-                ) : (
-                  <p className="price">${product.price}</p>
-                )}
+      <ul className='row d-flex align-items-stretch mb-5 '>
+        {products.map((product) => (
+          <li key={product.id} className="product col-lg-4">
+            <img src={product.image} alt={product.title} />
+            <div className="product-info">
+              {/* title */}
+              {editingProduct === product ? (
+                <input
+                  type="text"
+                  className="form-input"
+                  value={editProductValue.title}
+                  onChange={(e) => {
+                    const newProduct = { ...editProductValue };
+                    newProduct.title = e.target.value;
+                    //handleUpdateProduct(product.id, newProduct);
+                    setEditProductValue(newProduct);
+                  }}
+                />
+              ) : (
+                <Link to={`/product/${product.id}`}>
+                  <h3 className='text-uppercase text-small'>{product.title}</h3>
+                </Link>
+              )}
 
-                {/* rating */}
-                {editingProduct === product ? (
-                  <input
-                    type="text"
-                    value={editProductValue.rating.rate}
-                    onChange={(e) => {
-                      const newProduct = { ...editProductValue };
-                      console.log(newProduct);
-                      newProduct.rating = {
-                        ...newProduct.rating,
-                        rate: e.target.value
-                      };
-                      setEditProductValue(newProduct);
-                      //handleUpdateProduct(product.id, newProduct);
-                    }}
-                  />
-                ) : (
-                  <p className="price">rating: {product.rating.rate}</p>
-                )}
+              {/* category */}
+              {editingProduct === product ? (
+                <input
+                  type="text"
+                  className="form-input"
+                  value={editProductValue.category}
+                  onChange={(e) => {
+                    const newProduct = { ...editProductValue };
+                    newProduct.category = e.target.value;
+                    //handleUpdateProduct(product.id, newProduct);
+                    setEditProductValue(newProduct);
+                  }}
+                />
+              ) : (
+                <p className="price">{product.category}</p>
+              )}
 
-                {editingProduct === product ? (<>
-                  <button onClick={() => handleCancleProduct()}>
-                    cancel
+              {/* description */}
+              {editingProduct === product ? (
+                <textarea
+                  className="form-input"
+                  value={editProductValue.description}
+                  onChange={(e) => {
+                    const newProduct = { ...editProductValue };
+                    newProduct.description = e.target.value;
+                    //handleUpdateProduct(product.id, newProduct);
+                    setEditProductValue(newProduct);
+                  }}
+                ></textarea>
+              ) : (
+                <p>{product.description}</p>
+              )}
+
+              {/* price */}
+              {editingProduct === product ? (
+                <input
+                  type="text"
+                  value={editProductValue.price}
+                  onChange={(e) => {
+                    const newProduct = { ...editProductValue };
+                    newProduct.price = e.target.value;
+                    //handleUpdateProduct(product.id, newProduct);
+                    setEditProductValue(newProduct);
+                  }}
+                />
+              ) : (
+                <p className="price">${product.price}</p>
+              )}
+
+              {/* rating */}
+              {editingProduct === product ? (
+                <input
+                  type="text"
+                  value={editProductValue.rating.rate}
+                  onChange={(e) => {
+                    const newProduct = { ...editProductValue };
+                    console.log(newProduct);
+                    newProduct.rating = {
+                      ...newProduct.rating,
+                      rate: e.target.value
+                    };
+                    setEditProductValue(newProduct);
+                    //handleUpdateProduct(product.id, newProduct);
+                  }}
+                />
+              ) : (
+                <p className="price">rating: {product.rating.rate}</p>
+              )}
+
+              {editingProduct === product ? (<>
+                <button onClick={() => handleCancleProduct()}>
+                  cancel
+                </button>
+
+                <button onClick={(e) => handleUpdateProduct(product.id)}>
+                  update
+                </button>
+              </>
+              ) : (
+                <>
+                  <button onClick={() => handleAddToCart(product)}>
+                    Add To Cart
+                  </button>
+                  <button onClick={() => handleEditProduct(product)}>
+                    <i class="fa-regular fa-pen-to-square"></i>
                   </button>
 
-                  <button onClick={(e) => handleUpdateProduct(product.id)}>
-                    update
+                  <button onClick={() => handleDeleteProduct(product.id)}>
+                    <i class="fa-regular fa-trash-can"></i>
                   </button>
                 </>
-                ) : (
-                  <>
-                    <button onClick={() => handleAddToCart(product)}>
-                      Add To Cart
-                    </button>
-                    <button onClick={() => handleEditProduct(product)}>
-                      <i class="fa-regular fa-pen-to-square"></i>
-                    </button>
-
-                    <button onClick={() => handleDeleteProduct(product.id)}>
-                      <i class="fa-regular fa-trash-can"></i>
-                    </button>
-                  </>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
     </section >
 
   )

@@ -18,7 +18,7 @@ function Layout() {
     </div>
 
       {flashMessage && <FlashMessage message={flashMessage} onClose={handleFlashClose} />}
-      <div style={{ marginTop: "100px" }}>
+      <div style={{ marginTop: "50px" }}>
         <Outlet></Outlet>
       </div>
       <footer class="py-5 bg-dark">

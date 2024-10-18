@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../store';
@@ -10,7 +10,7 @@ const Navbar = () => {
 
   useEffect(() => {
     dispatch(actions.getCartValue());
-  }, [])
+  })
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
           <div className="navbar-left">
-            <Link to="/"><span class="G">G</span><span class="u">u</span><span class="i">i</span><span class="g">g</span><span class="l">l</span><span class="e">e</span>Shop</Link>
+            <Link to="/"><span class="G">G</span><span class="u">u</span><span class="i">i</span><span class="g">g</span><span class="l">l</span><span class="e">e</span></Link>
             <Link to="/Add-product">Add Article</Link>
           </div>
 
